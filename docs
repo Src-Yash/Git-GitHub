@@ -215,3 +215,14 @@ Main branch = your stable house
 Topic branch = a separate room where you're working on one thing
 
 You can experiment, make mistakes, commit frequently, and once you're satisfied, bring the finished work back into main.
+
+what is remote branch ?
+A remote branch is a branch that exists on a remote Git repository, usually on GitHub, rather than only on your computer.
+to see remote branches git remote -r
+
+What does origin mean?
+origin is simply the default name Git gives to your GitHub repository's remote.
+can be viewed with git remote -v
+
+to see both local and remote  branch git remote -a
+

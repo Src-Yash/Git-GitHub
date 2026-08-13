@@ -208,3 +208,10 @@ What are Long-Running Branches?
 
 A long-running branch is simply a branch that exists for a long time.
 
+what is a topic branch ?
+
+Main branch = your stable house
+
+Topic branch = a separate room where you're working on one thing
+
+You can experiment, make mistakes, commit frequently, and once you're satisfied, bring the finished work back into main.

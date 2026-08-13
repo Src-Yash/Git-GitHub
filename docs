@@ -233,3 +233,11 @@ git pull -> get all thhe remote changes and integrate them into my local branch 
 git fetch
 +
 git merge/rebase
+
+Rebasing -->
+Git operation used to move your commits onto the latest version of another branch.
+
+git switch main
+git pull
+git switch feature/login
+git rebase main

@@ -12,7 +12,7 @@ git init
 git add .
 git commit -m "comment"
 
-- for cloning 
+- for cloning
 git clone <repo link>
 
 -for status
@@ -207,3 +207,4 @@ git push origin --delete master
 What are Long-Running Branches?
 
 A long-running branch is simply a branch that exists for a long time.
+

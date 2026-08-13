@@ -226,3 +226,10 @@ can be viewed with git remote -v
 
 to see both local and remote  branch git remote -a
 
+git fetch --Downloads information about remote changes but doesn't change your current files.
+
+git pull -> get all thhe remote changes and integrate them into my local branch  --- Generally does
+
+git fetch
++
+git merge/rebase

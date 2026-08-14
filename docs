@@ -241,3 +241,22 @@ git switch main
 git pull
 git switch feature/login
 git rebase main
+
+# Rebasing vs merge
+
+A merge creates a new merge commit that combines the histories of two branches.
+git merge 
+
+Pros
+ -  Preserves the exact history of development.
+ -  Easy to see when branches were integrated.
+ -  Safer for shared branches because it doesn't rewrite history.
+ -  Good for collaborative workflows.
+Cons
+ -  History can become cluttered with many merge commits.
+ -  Harder to follow a linear sequence of changes.
+
+
+ Rebase
+
+A rebase moves your commits so they appear on top of another branch, creating a linear history.

@@ -256,7 +256,31 @@ Cons
  -  History can become cluttered with many merge commits.
  -  Harder to follow a linear sequence of changes.
 
-
  Rebase
 
 A rebase moves your commits so they appear on top of another branch, creating a linear history.
+
+git rebase
+
+-The Protocols
+
+for transfering of data git uses Local, HTTP,secure shell(ssh )and git
+
+// LOCAL--->
+
+The file:// protocol explicitly tells Git that the repository is a local file location:
+$ git clone file:///srv/git/project.git
+
+To add a local repository to an existing Git project, you can run something like this:
+
+$ git remote add local_proj /srv/git/project.git
+
+The Pros
+The pros of file-based repositories are that they’re simple and they use existing file permissions and network access.
+
+// HTTP Protocols --->
+
+- Smart HTTP
+- Dumb HTTP
+
+

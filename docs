@@ -284,3 +284,16 @@ The pros of file-based repositories are that they’re simple and they use exist
 - Dumb HTTP
 
 
+-- GitLab -->> database backed web application
+
+
+GitLab is a web-based DevOps platform that helps developers manage software projects. It combines Git-based version control with tools for collaboration, automation, and deployment.
+
+Here's what GitLab is commonly used for:
+
+Source code management: Store and track code using Git.
+Collaboration: Multiple developers can work on the same project, create branches, merge changes, and review each other's code.
+Issue tracking: Manage bugs, feature requests, and project tasks.
+CI/CD (Continuous Integration/Continuous Deployment): Automatically build, test, and deploy applications whenever code changes are pushed.
+Code reviews: Use merge requests (similar to GitHub pull requests) to review and discuss code before merging.
+Security and monitoring: Scan code for vulnerabilities and monitor application performance.

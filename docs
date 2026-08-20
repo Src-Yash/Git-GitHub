@@ -297,3 +297,76 @@ Issue tracking: Manage bugs, feature requests, and project tasks.
 CI/CD (Continuous Integration/Continuous Deployment): Automatically build, test, and deploy applications whenever code changes are pushed.
 Code reviews: Use merge requests (similar to GitHub pull requests) to review and discuss code before merging.
 Security and monitoring: Scan code for vulnerabilities and monitor application performance.
+
+-Distributed Git - Distributed Workflows
+
+it refers to how Git allows multiple developers to work on their own copies of a repository and synchronize their work.
+Unlike a centralized system where there is one main server containing the repository, Git gives every developer a complete copy of the repository, including its history.
+
+             GitHub / GitLab
+              Remote Repo
+                  │
+        ┌─────────┼─────────┐
+        ↓         ↓         ↓
+     Developer  Developer  Developer
+       Git        Git        Git
+     Repo       Repo       Repo
+
+Each developer can work independently.
+Typical Git distributed workflow
+Suppose you are working on a project.
+1. Clone the repository
+git clone https://github.com/user/project.git
+Now you have your own complete local repository.
+2. Create a branch
+git checkout -b login-feature
+You work on your feature without disturbing the main code.
+3. Make changes and commit
+git add .
+git commit -m "Add login feature"
+
+Push to remote
+
+git push origin login-feature
+
+Now your branch is available on GitHub.
+
+5. Create a Pull Request
+
+You ask the team to review and merge your changes into main.
+
+Your computer
+     │
+     │ git push
+     ▼
+GitHub
+     │
+     │ Pull Request
+     ▼
+   Review
+     │
+     ▼
+   main
+
+
+Why is it called "distributed"?
+
+Because Git doesn't require you to constantly communicate with the central server.
+You can do many operations locally:
+
+git log
+git diff
+git branch
+git commit
+git merge
+
+Even without internet.
+
+The remote repository (GitHub/GitLab) is mainly used to share and synchronize your work.
+
+Centralized vs Distributed
+Centralized VCS	Distributed Git
+Central server is essential	Each developer has a full repo
+Usually requires server for history operations	Most operations work offline
+Server is the main source of history	Every clone has repository history
+Example: SVN	Example: Git

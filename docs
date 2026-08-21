@@ -370,3 +370,5 @@ Central server is essential	Each developer has a full repo
 Usually requires server for history operations	Most operations work offline
 Server is the main source of history	Every clone has repository history
 Example: SVN	Example: Git
+
+git distributed directory is important for the multiple developers to work on

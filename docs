@@ -46,7 +46,7 @@ git rm --cached readme
 git log
 
 -One of the more helpful options is -p or --patch, which shows the difference (the patch output) introduced in each commit. You can also limit the number of log entries displayed, such as using -2 to show only the last two entries.
-git log -p  -(last changes )
+git log -p  -(last changes)
 
 -if you want to see some abbreviated stats for each commit, you can use the --stat option:
 git log --stat
@@ -67,7 +67,7 @@ git reset HEAD contributing .md
 
 git restore --staged contributing.md
 
-- Unmodifiying a Modified file witg git restore
+- Unmodifiying a Modified file with git restore
 
 git restore contributing.md
 
@@ -165,15 +165,13 @@ Suppose you’ve decided that your issue #53 work is complete and ready to be me
 
 git switch (main)
 git merge (issue name)
-after the merge there is no need of the brnch issue so we will delete it 
+after the merge there is no need of the branch issue so we will delete it 
 git branch -d "branch name"
 
 - git merge conflicts
 
 A merge conflict happens when Git doesn't know which change to keep because two versions of the same code have been modified differently.
-
 Think of it like two people editing the same paragraph in a Word document.
-
 if you want to use a graphical tool to resolve these issues, you can run git mergetool, which fires up an appropriate visual merge tool and walks you through the conflicts:
 
 - git branching - branch management
@@ -264,7 +262,7 @@ git rebase
 
 -The Protocols
 
-for transfering of data git uses Local, HTTP,secure shell(ssh )and git
+for transfering of data git uses Local, HTTP,secure shell(ssh)and git
 
 // LOCAL--->
 

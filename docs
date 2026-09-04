@@ -390,4 +390,42 @@ Imagine a project hosted on GitHub:
                  │
               You
 
-              
+
+Contributing to a Project
+
+ Original Project
+        (Upstream Repo)
+              │
+              │ Fork
+              ↓
+         Your GitHub Fork
+              │
+              │ Clone
+              ↓
+       Your Local Repository
+              │
+              │ Create branch
+              ↓
+       Feature/Fix Branch
+              │
+              │ Code + Commit
+              ↓
+       Push to Your Fork
+              │
+              │ Pull Request
+              ↓
+        Original Project
+              │
+              │ Review
+              ↓
+           Merge
+
+git clone	GitHub → your computer
+git remote add upstream	Remember original project
+git switch -c branch	Create your working branch
+git add	Select changes
+git commit	Save changes locally
+git push	Local → your GitHub fork
+git fetch upstream	Original project → local Git history
+git rebase upstream/main	Put your work on latest upstream
+Pull Request	Ask original project to accept your changes           

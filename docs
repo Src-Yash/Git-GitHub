@@ -370,3 +370,24 @@ Server is the main source of history	Every clone has repository history
 Example: SVN	Example: Git
 
 git distributed directory is important for the multiple developers to work on
+
+
+The basic idea
+
+Imagine a project hosted on GitHub:
+
+              GitHub
+            (Remote Repo)
+                 ↑
+          push / pull
+                 ↓
+        ┌───────────────┐
+        │ Your Local    │
+        │ Repository    │
+        └───────────────┘
+                 ↑
+          commit / branch
+                 │
+              You
+
+              

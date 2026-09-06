@@ -429,3 +429,38 @@ git push	Local → your GitHub fork
 git fetch upstream	Original project → local Git history
 git rebase upstream/main	Put your work on latest upstream
 Pull Request	Ask original project to accept your changes           
+
+
+Maintaining a Git project 
+
+What happens when YOU are the maintainer of a Git project and other developers send you their code?
+
+The Big Picture
+
+Imagine you maintain a project on GitHub.
+
+                    Contributors
+                 /       |       \
+                /        |        \
+          Developer A  Developer B  Developer C
+               |            |            |
+            feature A    feature B    bug fix
+                \           |           /
+                 \          |          /
+                  ↓         ↓         ↓
+                Your repository
+                       |
+                    Review
+                       ↓
+                    Testing
+                       ↓
+                    Merge
+                       ↓
+                   main/master
+                       |
+                     Release
+
+Your job as maintainer is basically:
+
+Receive → Review → Test → Integrate → Release
+

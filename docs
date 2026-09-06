@@ -464,3 +464,73 @@ Your job as maintainer is basically:
 
 Receive → Review → Test → Integrate → Release
 
+Why Name Branches Clearly?
+
+Instead of:
+
+git checkout -b branch1
+
+use:
+
+git checkout -b ruby_client
+
+Or:
+
+git checkout -b sc/ruby_client
+
+The sc/ could represent the contributor.
+
+So you immediately understand:
+
+sc/ruby_client
+│   │
+│   └── feature
+│
+└── contributor
+
+This becomes very useful when you have many contributors.
+
+4. Receiving Patches Through Email
+
+Historically, many open-source projects exchanged changes through email patches.
+
+A contributor might send you:
+0001-add-login.patch
+You need to apply that patch to your project.
+There are two main commands:
+git apply
+-
+git am
+5. git apply
+git apply takes a patch and changes your working files.
+For example:
+git apply patch.patch
+It modifies your files, but does not create a commit automatically.
+So afterward:
+git add .
+git commit -m "Add login feature"
+The process is:
+patch
+ ↓
+git apply
+ ↓
+files changed
+ ↓
+git add
+ ↓
+git commit
+6. Checking a Patch Before Applying It
+You can first ask Git:
+"Will this patch apply cleanly?"
+Use:
+git apply --check patch.patch
+
+If nothing is printed:
+
+(no output)
+that's generally good.
+If you see:
+error: patch failed
+
+the patch doesn't apply cleanly.
+This is useful because you can check first without changing your files.

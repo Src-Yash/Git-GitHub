@@ -534,3 +534,46 @@ error: patch failed
 
 the patch doesn't apply cleanly.
 This is useful because you can check first without changing your files.
+
+git am 
+
+it apply the commit for the contributor unlike git apply in which we have to make the commit manually
+
+8. What If git am Has a Conflict?
+
+Suppose the contributor's patch expects:
+hello
+world
+But your project now has:
+hello
+Git
+world
+Git may not know where to apply the patch.
+You'll get a conflict.
+Git tells you something like:
+Patch failed
+Now you manually fix the conflict.
+Then:
+
+git add .
+git am --resolved
+Git continues applying the patch.
+If You Don't Want the Patch
+You can skip it:
+git am --skip
+Meaning:
+"Don't apply this patch. Move to the next one."
+If You Want to Cancel Everything
+Use:
+
+git am --abort
+Meaning:
+"Forget this patch operation and return me to the previous state."
+So remember:
+Conflict during git am
+        │
+        ├── Fix conflict → git add → git am --resolved
+        │
+        ├── Don't want patch → git am --skip
+        │
+        └── Cancel everything → git am --abort

@@ -577,3 +577,30 @@ Conflict during git am
         ├── Don't want patch → git am --skip
         │
         └── Cancel everything → git am --abort
+
+
+GitHub Flow
+
+This is the main process for contributing to open source:
+
+1. Fork repository
+       ↓
+2. Clone your fork
+       ↓
+3. Create a branch
+       ↓
+4. Make changes
+       ↓
+5. Commit changes
+       ↓
+6. Push branch
+       ↓
+7. Create Pull Request
+       ↓
+8. Maintainer reviews
+       ↓
+9. Fix requested changes if needed
+       ↓
+10. Maintainer merges/ closes PR
+       ↓
+11. Update your fork

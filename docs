@@ -578,11 +578,8 @@ Conflict during git am
         │
         └── Cancel everything → git am --abort
 
-
 GitHub Flow
-
 This is the main process for contributing to open source:
-
 1. Fork repository
        ↓
 2. Clone your fork
@@ -604,3 +601,53 @@ This is the main process for contributing to open source:
 10. Maintainer merges/ closes PR
        ↓
 11. Update your fork
+
+Clone
+Clone means downloading your GitHub repository to your computer.
+git clone <repository-url>
+
+Branch
+Don't normally make your changes directly on master/main.
+Create a separate branch:
+git checkout -b fix-login
+
+Commit
+
+After making changes:
+
+git add .
+git commit -m "Fix login validation"
+Push
+
+Send your branch from your computer to your GitHub fork:
+
+git push origin fix-login
+
+Pull Request (PR)
+
+Now you ask the original project maintainer:
+"Please review my changes and add them to your project."
+That's a Pull Request.
+Your fork
+   ↓
+Your branch
+   ↓
+Pull Request
+   ↓
+Original repository
+
+8. Changes after PR
+
+Very important:
+
+A PR doesn't mean you're finished.
+
+The maintainer might say:
+
+"Please change this function."
+
+You make the change locally:
+
+git add .
+git commit -m "Address review feedback"
+git push origin fix-login

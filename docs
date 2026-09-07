@@ -651,3 +651,32 @@ You make the change locally:
 git add .
 git commit -m "Address review feedback"
 git push origin fix-login
+
+Upstream
+
+There are usually two repositories:
+
+Original project = upstream
+Your fork       = origin
+Example:
+GitHub
+│
+├── Original Project
+│      ↑
+│   upstream
+│
+└── Your Fork
+       ↑
+     origin
+You should get new changes from upstream so your fork doesn't become outdated.
+
+Keeping your fork updated
+
+If the original project changes, your fork doesn't automatically update.
+
+You can do:
+
+git checkout main
+git pull <original-repository-url>
+git push origin main'
+

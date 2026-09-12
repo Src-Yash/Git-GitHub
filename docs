@@ -851,59 +851,40 @@ For example:
 + command("git log -n 30 #{treeish}")
 
 Git asks:
-
 Stage this hunk [y,n,a,d,s,e,?]?
-
 Now you choose what to do.
-
 9. The important options
 
 You don't need to memorize every option initially.
-
 Focus on these:
-
 y → Yes
 y
-
 Means:
-
 Stage this change.
-
 n → No
 n
-
 Means:
-
 Don't stage this change.
-
 The change stays in your working directory.
-
 a → All
 a
-
 Means:
-
 Stage this hunk and all remaining hunks in this file.
 
 d → Don't stage
 d
 
 Means:
-
 Don't stage this hunk or the remaining hunks in this file.
-
 s → Split
 s
 
 Sometimes Git combines several small changes into one big hunk.
 
 s tries to split it into smaller hunks.
-
 This is extremely useful when you want very precise commits.
-
 e → Edit manually
 e
-
 Allows you to manually decide which lines of the hunk should be staged.
 
 This is more advanced, so don't worry about it yet.

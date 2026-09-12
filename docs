@@ -907,49 +907,28 @@ e
 Allows you to manually decide which lines of the hunk should be staged.
 
 This is more advanced, so don't worry about it yet.
-
 10. Simple example
-
 Suppose you modify main.cpp:
-
 + int age = 20;
-
 ...
-
 + cout << "Hello";
-
 You want the first change in Commit 1 and the second change in Commit 2.
-
 Run:
-
 git add -p
-
 Git shows the first hunk:
-
 Stage this hunk? [y,n,...]
-
 You type:
-
 y
-
 Then Git shows the second:
-
 Stage this hunk? [y,n,...]
-
 You type:
-
 n
-
 Now:
-
 Staged:
     int age = 20;
-
 Unstaged:
     cout << "Hello";
-
 Then:
-
 git commit -m "Add age variable"
 
 Only the first change is committed.

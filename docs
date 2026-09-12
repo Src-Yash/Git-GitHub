@@ -657,7 +657,7 @@ Upstream
 There are usually two repositories:
 
 Original project = upstream
-Your fork       = origin
+Your fork        = origin
 Example:
 GitHub
 │
@@ -668,5 +668,377 @@ GitHub
 └── Your Fork
        ↑
      origin
-You should get new changes from upstream so your fork doesn't become outdated.
-pnpm install
+git add -i
+
+You can enter Git's interactive staging mode with:
+
+git add -i
+
+Git gives you a menu like:
+
+*** Commands ***
+1: status
+2: update
+3: revert
+4: add untracked
+5: patch
+6: diff
+7: quit
+8: help
+
+You can think of these as:
+
+Command	Meaning
+1 / s	See status
+2 / u	Stage files
+3 / r	Unstage files
+4 / a	Add untracked files
+5 / p	Stage only parts of files
+6 / d	See staged changes
+7 / q	Quit
+4. Stage specific files
+
+Suppose you have:
+
+TODO
+index.html
+simplegit.rb
+
+and all three have changes.
+
+You only want:
+
+TODO
+index.html
+
+to be staged.
+
+Run:
+
+git add -i
+
+Then choose:
+
+2
+
+because 2 means update.
+
+Git shows:
+
+1: TODO
+2: index.html
+3: simplegit.rb
+
+You enter:
+
+1,2
+
+Then press Enter.
+
+Now:
+
+TODO          → staged
+index.html    → staged
+simplegit.rb  → unstaged
+
+So your next commit will contain only:
+
+TODO
+index.html
+5. What does "unstage" mean?
+
+Suppose you accidentally staged:
+
+TODO
+index.html
+
+but you don't want TODO anymore.
+
+You can unstage it.
+
+Choose:
+
+3
+
+because 3 = revert.
+
+Then:
+
+1
+
+to select TODO.
+
+After pressing Enter:
+
+TODO          → unstaged
+index.html    → staged
+
+Important:
+
+Unstaging does NOT delete your changes.
+
+It simply moves the changes out of the staging area.
+
+6. See what you staged
+
+You can choose:
+
+6
+
+which means diff.
+
+This shows you exactly what will be included in your next commit.
+
+For example:
+
+- <div id="footer">contact : support@github.com</div>
++ <div id="footer">contact : email.support@github.com</div>
+
+This is useful because before committing you can ask:
+
+"Exactly what am I about to commit?"
+
+7. The REALLY useful part: Partial staging
+
+This is the most important concept in this section.
+
+Imagine you edit one file:
+
+student.cpp
+
+But you make two completely different changes.
+
+For example:
+
+// Change 1
+int age = 20;
+
+and later:
+
+// Change 2
+cout << "Hello";
+
+You want:
+
+Commit 1 → age change
+Commit 2 → Hello change
+
+But both changes are inside the same file.
+
+Normally:
+
+git add student.cpp
+
+would stage both changes.
+
+But you can stage only one.
+
+8. git add -p
+
+This is probably the command you should remember most:
+
+git add -p
+
+p means:
+
+patch
+
+Git shows you a section of your changes called a hunk.
+
+For example:
+
+- command("git log -n 25 #{treeish}")
++ command("git log -n 30 #{treeish}")
+
+Git asks:
+
+Stage this hunk [y,n,a,d,s,e,?]?
+
+Now you choose what to do.
+
+9. The important options
+
+You don't need to memorize every option initially.
+
+Focus on these:
+
+y → Yes
+y
+
+Means:
+
+Stage this change.
+
+n → No
+n
+
+Means:
+
+Don't stage this change.
+
+The change stays in your working directory.
+
+a → All
+a
+
+Means:
+
+Stage this hunk and all remaining hunks in this file.
+
+d → Don't stage
+d
+
+Means:
+
+Don't stage this hunk or the remaining hunks in this file.
+
+s → Split
+s
+
+Sometimes Git combines several small changes into one big hunk.
+
+s tries to split it into smaller hunks.
+
+This is extremely useful when you want very precise commits.
+
+e → Edit manually
+e
+
+Allows you to manually decide which lines of the hunk should be staged.
+
+This is more advanced, so don't worry about it yet.
+
+10. Simple example
+
+Suppose you modify main.cpp:
+
++ int age = 20;
+
+...
+
++ cout << "Hello";
+
+You want the first change in Commit 1 and the second change in Commit 2.
+
+Run:
+
+git add -p
+
+Git shows the first hunk:
+
+Stage this hunk? [y,n,...]
+
+You type:
+
+y
+
+Then Git shows the second:
+
+Stage this hunk? [y,n,...]
+
+You type:
+
+n
+
+Now:
+
+Staged:
+    int age = 20;
+
+Unstaged:
+    cout << "Hello";
+
+Then:
+
+git commit -m "Add age variable"
+
+Only the first change is committed.
+
+Later:
+
+git add .
+git commit -m "Print hello message"
+
+The second change gets its own commit.
+
+11. Why is this useful?
+
+Imagine you're working on a project and accidentally make these changes:
+
+login bug fix
++
+new button
++
+README update
++
+debugging code
+If you simply do:
+git add .
+git commit -m "changes"
+you get one messy commit.
+
+Instead:
+Commit 1
+"Fix login bug"
+Commit 2
+"Add new button"
+Commit 3
+"Update README"
+This makes your Git history clean and understandable.
+This is especially useful when contributing to open-source projects because maintainers prefer focused commits.
+12. git add -i vs git add -p
+The easiest way to remember:
+Interactive mode
+git add -i
+
+Gives you a menu:
+
+status
+update
+revert
+patch
+diff
+...
+You interact with Git through that menu.
+Patch mode
+git add -p
+Directly takes you to partial staging.
+So if your goal is simply:
+"I changed multiple things in one file, but I only want to commit some of them."
+Use:
+git add -p
+13. The most important commands from this entire section
+I'd recomend remembering these first:
+
+git status
+See what's changed.
+git add filename
+Stage a whole file.
+git add -p
+Stage parts of a file.
+git diff
+See unstaged changes.
+git diff --cached
+See staged change.
+git restore --staged filename
+Unstage a file.
+git commit -m "message"
+Commit staged changes.
+14. One mental picture to remember
+Think of the staging area as a basket 🧺.
+You modify 5 things:
+🍎 Change A
+🍎 Change B
+🍎 Change C
+🍎 Change D
+🍎 Change E
+You don't necessarily have to put everything into the basket.
+With:
+git add
+you choose whole files.
+With:
+git add -p
+you can choose individual pieces of files.
+Then:
+git commit
+takes only what's inside the basket.
